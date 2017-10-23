@@ -90,13 +90,20 @@
 
     </dependencies>
 
-
     <build>
         <finalName>JRTestTask</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <path>/JRTestTask</path>
+                    <username>username</username>
+                    <password>password</password>
+                    <update>true</update>
+                </configuration>
             </plugin>
         </plugins>
     </build>
